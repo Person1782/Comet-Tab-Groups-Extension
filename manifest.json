@@ -3,6 +3,12 @@
   "name": "Comet Tab Archive",
   "version": "1.0.0",
   "description": "Shows my open tab groups in a sidebar.",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "permissions": [
     "tabs",
     "tabGroups",
@@ -10,7 +16,13 @@
     "storage"
   ],
   "action": {
-    "default_title": "Open Comet Tab Archive"
+    "default_title": "Open Comet Tab Archive",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
   },
   "side_panel": {
     "default_path": "sidebar.html"
