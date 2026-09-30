@@ -1,0 +1,342 @@
+:root {
+  color-scheme: dark;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #1e2421;
+  color: #eee9df;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 240px;
+  background: radial-gradient(circle at top right, #303934, transparent 48%), #1e2421;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 18px 18px;
+  border-bottom: 1px solid #414a44;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: #e69a6b;
+  font: 700 11px/1.2 ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.icon-button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #566159;
+  border-radius: 50%;
+  background: #292f2b;
+  color: #ffffff;
+  cursor: pointer;
+  font: 22px/1 ui-sans-serif, system-ui, sans-serif;
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+  background: #e69a6b;
+  color: #1e2421;
+}
+
+.command-button,
+.secondary-button {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid #e69a6b;
+  border-radius: 4px;
+  background: #e69a6b;
+  color: #1e2421;
+  cursor: pointer;
+  font: 12px ui-sans-serif, system-ui, sans-serif;
+}
+
+.command-button:hover,
+.command-button:focus-visible {
+  background: #f0aa7c;
+}
+
+.command-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.secondary-button {
+  border-color: #566159;
+  background: transparent;
+  color: #eee9df;
+}
+
+.secondary-button:hover,
+.secondary-button:focus-visible {
+  background: #343c36;
+}
+
+.groups {
+  display: grid;
+  gap: 12px;
+  padding: 16px 12px 24px;
+}
+
+.saved-section {
+  border-top: 1px solid #414a44;
+}
+
+.saved-section h2 {
+  margin: 0;
+  padding: 16px 18px 0;
+  color: #aab1a8;
+  font: 700 11px/1.2 ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.saved-section:has(.saved-group) {
+  padding-bottom: 8px;
+}
+
+.saved-section + .saved-section {
+  border-top: 1px solid #414a44;
+}
+
+.saved-group {
+  overflow: hidden;
+  border: 1px solid #414a44;
+  border-left: 4px solid var(--group-color);
+  border-radius: 6px;
+  background: rgba(41, 47, 43, 0.92);
+}
+
+.collection {
+  overflow: hidden;
+  border: 1px solid #414a44;
+  border-radius: 6px;
+  background: rgba(41, 47, 43, 0.92);
+}
+
+.collection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+.collection-details {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.collection-count {
+  color: #aab1a8;
+  font: 11px ui-sans-serif, system-ui, sans-serif;
+}
+
+.collection-group {
+  margin: 0 12px 8px;
+  border-left: 3px solid var(--group-color);
+  background: #222925;
+}
+
+.collection-group-summary {
+  overflow: hidden;
+  padding: 8px;
+  color: #d2d5cc;
+  cursor: pointer;
+  font: 12px/1.3 ui-sans-serif, system-ui, sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+dialog {
+  width: min(340px, calc(100% - 32px));
+  border: 1px solid #566159;
+  border-radius: 6px;
+  background: #292f2b;
+  color: #eee9df;
+}
+
+dialog::backdrop {
+  background: rgba(8, 12, 10, 0.72);
+}
+
+#collection-form {
+  display: grid;
+  gap: 12px;
+}
+
+#collection-form label {
+  font: 13px ui-sans-serif, system-ui, sans-serif;
+}
+
+#collection-name {
+  min-width: 0;
+  padding: 9px;
+  border: 1px solid #566159;
+  border-radius: 4px;
+  background: #1e2421;
+  color: #eee9df;
+  font: 14px ui-sans-serif, system-ui, sans-serif;
+}
+
+.collection-options {
+  display: grid;
+  max-height: 240px;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.collection-choice-set {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid #414a44;
+  border-radius: 4px;
+}
+
+.collection-choice-set legend {
+  padding: 0 4px;
+  color: #aab1a8;
+  font: 700 11px ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.collection-choice {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  font: 13px ui-sans-serif, system-ui, sans-serif;
+}
+
+.collection-choice:hover {
+  background: #343c36;
+}
+
+.collection-choice span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.collection-choice input {
+  flex: 0 0 auto;
+  accent-color: #e69a6b;
+}
+
+.choice-empty,
+.collection-error {
+  margin: 4px;
+  color: #aab1a8;
+  font: 12px/1.4 ui-sans-serif, system-ui, sans-serif;
+}
+
+.collection-error {
+  color: #f0aaa1;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.saved-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+.saved-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.saved-group-name {
+  overflow: hidden;
+  font: 700 13px/1.25 ui-sans-serif, system-ui, sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.restore-button {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border: 1px solid #e69a6b;
+  border-radius: 4px;
+  background: #e69a6b;
+  color: #1e2421;
+  cursor: pointer;
+  font: 12px ui-sans-serif, system-ui, sans-serif;
+}
+
+.restore-button:hover,
+.restore-button:focus-visible {
+  background: #f0aa7c;
+}
+
+.delete-button {
+  padding: 5px 8px;
+  border: 1px solid #a65d55;
+  border-radius: 4px;
+  background: transparent;
+  color: #f0aaa1;
+  cursor: pointer;
+  font: 12px ui-sans-serif, system-ui, sans-serif;
+}
+
+.delete-button:hover,
+.delete-button:focus-visible {
+  background: #593532;
+}
+
+.collection-delete-button {
+  margin: 0 8px 8px;
+}
+
+.saved-tabs {
+  margin: 0;
+  padding: 0 12px 10px 24px;
+  color: #aab1a8;
+  font: 12px/1.5 ui-sans-serif, system-ui, sans-serif;
+}
+
+.empty-state {
+  margin: 24px 8px;
+  color: #aab1a8;
+  font: 13px/1.5 ui-sans-serif, system-ui, sans-serif;
+  text-align: center;
+}

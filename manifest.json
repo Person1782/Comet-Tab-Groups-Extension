@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Comet Tab Archive",
+  "version": "1.0.0",
+  "description": "Shows my open tab groups in a sidebar.",
+  "permissions": [
+    "tabs",
+    "tabGroups",
+    "sidePanel",
+    "storage"
+  ],
+  "action": {
+    "default_title": "Open Comet Tab Archive"
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

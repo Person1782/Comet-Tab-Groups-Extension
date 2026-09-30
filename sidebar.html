@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tab Groups</title>
+    <link rel="stylesheet" href="sidebar.css">
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <p class="eyebrow">Archive</p>
+        <h1>Saved tabs</h1>
+      </div>
+      <div class="header-actions">
+        <button id="save-window" class="command-button" type="button">New collection</button>
+        <button id="refresh" class="icon-button" type="button" title="Refresh saved groups" aria-label="Refresh saved groups">↻</button>
+      </div>
+    </header>
+
+    <section class="saved-section" aria-labelledby="collections-heading">
+      <h2 id="collections-heading">Collections</h2>
+      <div id="saved-collections" class="groups" aria-live="polite"></div>
+    </section>
+
+    <section class="saved-section" aria-labelledby="saved-heading">
+      <h2 id="saved-heading">Saved groups</h2>
+      <main id="saved-groups" class="groups" aria-live="polite">
+        <p class="empty-state">Loading saved groups...</p>
+      </main>
+    </section>
+
+    <dialog id="collection-dialog">
+      <form id="collection-form">
+        <label for="collection-name">Collection name</label>
+        <input id="collection-name" name="name" type="text" maxlength="80" required>
+        <div id="collection-options" class="collection-options"></div>
+        <p id="collection-error" class="collection-error" aria-live="polite"></p>
+        <div class="dialog-actions">
+          <button id="cancel-collection" class="secondary-button" type="button">Cancel</button>
+          <button class="command-button" type="submit">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="sidebar.js"></script>
+  </body>
+</html>
