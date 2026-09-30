@@ -21,7 +21,7 @@ A Chrome extension for saving, organizing, and restoring tab groups from the bro
 
 ## Use
 
-Select **New collection**, enter a name, and choose one or more groups. Open groups are taken from the current browser window. Saving the collection closes the selected open groups; selected saved groups remain in the saved-groups list as well as being added to the collection.
+Select **New collection**, enter a name, and choose one or more groups. Open groups are taken from the current browser window. Saving the collection closes selected open groups and moves selected saved groups out of the saved-groups list into the collection.
 
 Use **Restore all** on a collection to reopen its groups. Restoring consumes the collection entries as they are restored. Use **Restore** on an individual saved group to reopen it. Delete controls remove a saved group or collection from the archive without closing any currently open tabs.
 

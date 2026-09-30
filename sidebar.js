@@ -210,6 +210,7 @@ async function getCollectionChoices() {
   }).filter((group) => group.tabs.length > 0);
   const savedGroups = (stored[snapshotsKey] ?? []).map((group) => ({
     key: `saved-${group.id}`,
+    savedGroupId: group.id,
     title: group.title,
     color: group.color,
     collapsed: group.collapsed,
@@ -276,7 +277,7 @@ async function saveCollection(name, selectedKeys) {
     tabs: group.tabs
   }));
 
-  const stored = await chrome.storage.local.get(collectionsKey);
+  const stored = await chrome.storage.local.get([collectionsKey, snapshotsKey]);
   const collections = stored[collectionsKey] ?? [];
   collections.unshift({
     id: `collection-${Date.now()}`,
@@ -284,7 +285,17 @@ async function saveCollection(name, selectedKeys) {
     groups: collectionGroups,
     savedAt: Date.now()
   });
-  await chrome.storage.local.set({ [collectionsKey]: collections });
+  const selectedSavedGroupIds = new Set(
+    selectedGroups
+      .filter((group) => group.savedGroupId !== undefined)
+      .map((group) => group.savedGroupId)
+  );
+  const savedGroups = (stored[snapshotsKey] ?? [])
+    .filter((group) => !selectedSavedGroupIds.has(group.id));
+  await chrome.storage.local.set({
+    [collectionsKey]: collections,
+    [snapshotsKey]: savedGroups
+  });
 
   const tabIdsToClose = selectedGroups.flatMap((group) => group.tabIds ?? []);
   if (tabIdsToClose.length > 0) await chrome.tabs.remove(tabIdsToClose);
